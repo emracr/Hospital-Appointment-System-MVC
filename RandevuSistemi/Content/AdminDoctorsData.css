@@ -1,0 +1,76 @@
+﻿.table{
+    width:100% !important;
+    margin:0px;
+}
+.user-update > a{
+    margin-left:25px;
+    color:#deba0f;
+}
+.user-delete > a{
+    margin-left:5px;
+    color:#d91a1a;
+}
+#btn-doktor-ekle{
+    position:relative;
+    left:40px;
+    margin:0px;
+}
+.btn-doctor-ekle-div{
+    margin-left:-40px;
+    margin-bottom:-130px;
+    margin-top:130px;
+}
+.doctors-data-sub-div{
+    margin:0px;
+    margin-left:50px !important;
+    padding:0px;
+    width:100%;
+}
+@media screen and (max-width:1240px){
+    .table{
+        width:70% !important;
+        margin-right:-150px;
+    }
+    .btn-doctor-ekle-div{
+        margin-left:255px;
+    }
+}
+@media screen and (max-width:1219px){
+
+    .btn-doctor-ekle-div{
+        margin-left:175px;
+    }
+}
+@media screen and (max-width:1200px){
+    .btn-doctor-ekle-div{
+        margin-left:145px;
+    }
+    #btn-doktor-ekle{
+        font-size:15px;
+    }
+}
+@media screen and (max-width:992px){
+
+    .btn-doctor-ekle-div{
+        margin-left:115px;
+    }
+}
+@media screen and (max-width:768px){
+
+    .btn-doctor-ekle-div{
+        margin-left:35px;
+    }
+    #btn-doktor-ekle{
+        font-size:14px;
+    }
+}
+@media screen and (max-width:500px){
+
+    .btn-doctor-ekle-div{
+        margin-left:25px;
+    }
+    #btn-doktor-ekle{
+        font-size:13px;
+    }
+}
+

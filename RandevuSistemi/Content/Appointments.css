@@ -1,0 +1,200 @@
+﻿*{
+    font-family: 'Oxygen', sans-serif;
+}
+.table{
+    overflow-x:scroll;
+    background-color:#fff;
+}
+.table-head-tr{
+    font-weight:500;
+    text-align:center;
+}
+.table-head-tr > th{
+    text-align:center;
+    vertical-align:middle;
+}
+.table-body-tr{
+    text-align:center;
+}
+.table-body-tr > td{
+    text-align:center;
+    vertical-align:middle;
+}
+ /*--
+Author: W3Layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+--*/
+
+/*-- Reset-Code --*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,caption,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+ol,ul{list-style:none;margin:0px;padding:0px;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+a{text-decoration:none;}
+.txt-rt{text-align:right;}/* text align right */
+.txt-lt{text-align:left;}/* text align left */
+.txt-center{text-align:center;}/* text align center */
+.float-rt{float:right;}/* float right */
+.float-lt{float:left;}/* float left */
+.clear{clear:both;}/* clear float */
+.pos-relative{position:relative;}/* Position Relative */
+.pos-absolute{position:absolute;}/* Position Absolute */
+.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+.vertical-top{	vertical-align:top;}/* vertical align top */
+nav.vertical ul li{	display:block;}/* vertical menu */
+nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+img{max-width:100%;}
+body {
+	padding: 0;
+	margin: 0;
+	background-image:url(../Files/Images/background2.jpg);
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-size:cover;
+    background-color:#fff;
+	font-family: 'Open Sans', sans-serif;
+}
+body a {
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+	text-decoration: none;
+	letter-spacing:1px;
+	font-size:15px;
+	font-weight:600;
+}
+body a:hover {
+	text-decoration: none;
+}
+body a:focus, a:hover {
+	text-decoration: none;
+}
+p {
+	margin: 0;
+	color:#777;
+	letter-spacing:1px;
+	line-height:1.8em;
+	font-size:14px;
+	font-family: 'Open Sans', sans-serif;
+}
+.row{
+	margin:0px;
+	padding:0px;
+}
+ul {
+	margin: 0;
+	padding: 0;
+}
+label {
+	margin: 0;
+}
+a:focus, a:hover {
+	text-decoration: none;
+	outline: none;
+}
+img{
+	width:100%;
+}
+/*-- //Reset-Code --*/
+
+.nav-item a{
+    color:#eaeaea !important;
+}
+.userNameText{
+    color:#e8e8e8 !important;
+    text-transform:uppercase;
+    letter-spacing:1px !important;
+    margin-top:2px !important;
+    font-size:14px !important;
+    font-weight: 600 !important;
+}
+.w3l_form {
+    padding: 0px;
+    flex-basis: 35%;
+	-webkit-flex-basis: 35%;
+	background: #4CAF50;
+}
+.left {
+    width: 100%;
+    float: left;
+}
+.margin {
+    margin-right: 2%;
+    margin-bottom:40px;
+}
+label {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #777;
+}
+h3.w3ls {
+    margin: 10px 0px;
+    padding-left: 60px;
+}
+h3.agileits {
+    padding-left: 10px;
+}
+.container {
+    width: 75%;
+    margin: 0 auto;
+}
+.input-group i.fa, i.fas {
+    font-size: 16px;
+    vertical-align: middle;
+    color: #999;
+	box-sizing:border-box;
+	float:left;
+    width: 6%;
+    text-align: center;
+    margin-top: 12px;
+}
+.userNameText{
+    color:#c6c6c6;
+    text-transform:uppercase;
+    font-weight:bold;
+    letter-spacing:0px;
+    margin-top:3px;
+    font-size:13px;
+}
+@media screen and (max-width:1000px){
+    .table{
+        width:60% !important;
+    }
+    .table tr{
+        font-size:13px;
+    }
+}
+@media screen and (max-width:991px){
+
+    .form-inline > .userNameText{
+        position:relative;
+        top:-30px;
+        left:20px;
+    }
+    .form-inline > .navbar-right{
+        margin-left:-90px;
+        margin-top:40px;
+    }
+}
+
+@media screen and (max-width:900px){
+    .table{
+        width:40% !important;
+    }
+    .table tr{
+        font-size:12px;
+    }
+}
+@media screen and (max-width:500px){
+    .form-inline{
+        margin-left:-15px;
+    }
+}

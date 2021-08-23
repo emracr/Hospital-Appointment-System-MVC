@@ -1,0 +1,182 @@
+﻿@using RandevuSistemi.ViewModels
+@model RandevuSistemi.ViewModels.MakeAppointmentViewModel
+@{
+    ViewBag.Title = "MakeAnAppointment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="makeanappointment">
+    <div class="container" style="margin-top:0px;">
+        <div class="agile_info">
+
+            <div class="w3_info">
+                <div class="w3_info_header">
+                    <i class="fas fa-file-signature"></i>
+                    <p>Randevu Bilgi Formu</p>
+                </div>
+                <div>
+                    @if (ViewBag.AppointmentPoliclinicOverflow != null)
+                    {
+                        <div class="error-alert">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <p class="error-message-text">@ViewBag.AppointmentPoliclinicOverflow</p>
+                        </div>
+                    }
+                    @if (ViewBag.AppointmentDailyOverflow != null)
+                    {
+                        <div class="error-alert">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <p class="error-message-text">@ViewBag.AppointmentDailyOverflow</p>
+                        </div>
+                    }
+                    @if (ViewBag.AppointmentConflict != null)
+                    {
+                        <div class="error-alert">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <p class="error-message-text">@ViewBag.AppointmentConflict</p>
+                        </div>
+                    }
+                    @if (ViewBag.AppointmentOverflow != null)
+                    {
+                        <div class="error-alert">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <p class="error-message-text">@ViewBag.AppointmentOverflow</p>
+                        </div>
+                    }
+                </div>
+                @using (Html.BeginForm("MakeAnAppointment", "Appointment", FormMethod.Post, new { @autocomplete = "off" }))
+                {
+                    @Html.AntiForgeryToken()                   
+                    <div class="left margin mt-4">
+                        <label>RANDEVU TARİHİ</label>
+                        <div class="input-group">
+                            <span><i class="fas fa-calendar-week" aria-hidden="true"></i></span>
+                            @Html.TextBoxFor(m => m.RandevuTarihi, new { @class = "form-control", @style = "border:none;outline:none;", @type = "date", @onchange = "DateChange()" })
+                        </div>
+                        <p class="error-validation-message">@Html.ValidationMessageFor(m => m.RandevuTarihi)</p>
+                    </div>
+                    <div class="left margin">
+                        <label>RANDEVU SAATİ</label>
+                        <div class="input-group">
+                            <span><i class="fas fa-clock" aria-hidden="true"></i></span>
+                            @if (ViewBag.RandevuSaatleri != null)
+                            {
+                                @Html.DropDownListFor(m => m.RandevuSaati, ViewBag.RandevuSaatleri as SelectList, "--Randevu Saati Seçiniz--", new { @class = "form-control", @style = "border:none;outline:none;background-color:#fff;", @disabled = "disabled" })
+                            }
+                        </div>
+                        <p class="error-validation-message">@Html.ValidationMessageFor(m => m.RandevuSaati)</p>
+                    </div>
+                    <div class="left margin">
+                        <label>İL</label>
+                        <div class="input-group">
+                            <span><i class="fas fa-city" aria-hidden="true"></i></span>
+                            @if (ViewBag.Cities != null)
+                            {
+                                @Html.DropDownListFor(m => m.il, ViewBag.Cities as SelectList, "--Bir İl Seçiniz--", new { @class = "form-control", @style = "border:none;outline:none;", @onchange = "CityChange()" })
+                            }
+                        </div>
+                        <p class="error-validation-message">@Html.ValidationMessageFor(m => m.il)</p>
+                    </div>
+                    <div class="left margin">
+                        <label>İLÇE</label>
+                        <div class="input-group">
+                            <span><i class="fas fa-city" aria-hidden="true"></i></span>
+                            @Html.DropDownListFor(m => m.ilce, new SelectList(" "), "--Bir İlçe Seçiniz--", new { @class = "form-control", @style = "border:none;outline:none;background-color:#fff;", @disabled = "disabled" })
+                        </div>
+                        <p class="error-validation-message">@Html.ValidationMessageFor(m => m.ilce)</p>
+                    </div>
+                    <div class="left margin">
+                        <label>POLİKLİNİK</label>
+                        <div class="input-group">
+                            <span><i class="fas fa-clinic-medical" aria-hidden="true"></i></span>
+                            @if (ViewBag.Poliklinikler != null)
+                            {
+                                @Html.DropDownListFor(m => m.Poliklinik, ViewBag.Poliklinikler as SelectList, "--Bir Poliklinik Seçiniz--", new { @class = "form-control", @style = "border:none;outline:none;", @onchange = "DoctorChange()" })
+                            }
+                        </div>
+                        <p class="error-validation-message">@Html.ValidationMessageFor(m => m.Poliklinik)</p>
+                    </div>
+                    <div class="left margin">
+                        <label>HEKİM</label>
+                        <div class="input-group">
+                            <span><i class="fas fa-user-md" aria-hidden="true"></i></span>
+                            @Html.DropDownListFor(m => m.Hekim, new SelectList(" "), "--Bir Hekim Seçiniz--", new { @class = "form-control", @style = "border:none;outline:none;background-color:#fff;", @disabled = "disabled" })
+                        </div>
+                        <p class="error-validation-message">@Html.ValidationMessageFor(m => m.Hekim)</p>
+                    </div>
+                    <div class="clear"></div>
+                    <button class="btn btn-success btn-block" type="submit" id="RandevuSorgula">Randevu Al<i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#il").change(function () {
+            $.get("/Appointment/GetDiscrit", { CityId: $("#il").val() }, function (data) {
+                $("#ilce").empty();
+                $.each(data, function (index, row) {
+                    $("#ilce").append("<option value='" + row.IlceAdi + "'>" + row.IlceAdi + "</option>")
+                });
+            });
+        })
+    });
+
+    $(document).ready(function () {
+        $("#Poliklinik").change(function () {
+            $.get("/Appointment/GetDoctor", { BranchId: $("#Poliklinik").val() }, function (data) {
+                $("#Hekim").empty();
+                $.each(data, function (index, row) {
+                    $("#Hekim").append("<option value='" + row.Isim + "'>" + row.Isim + "</option>")
+                });
+            });
+        })
+    });
+
+    function CityChange() {
+        document.getElementById("ilce").disabled = false;
+    }
+    function DoctorChange() {
+        document.getElementById("Hekim").disabled = false;
+    }
+    function DateChange() {
+        document.getElementById("RandevuSaati").disabled = false;
+    }
+    //Randevu tarihi için takvim min tarih için ayarlandı
+
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
+
+    if (dd < 10) { dd = '0' + dd }
+    if (mm < 10) { mm = '0' + mm }
+
+    today = yyyy + '-' + mm + '-' + dd;
+    document.getElementById("RandevuTarihi").setAttribute("min", today);
+
+    //Randevu tarihi için takvim max tarih için ayarlandı
+
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
+
+    if (dd < 13) { dd += 15; }
+    else { mm += 1; dd -= 15; }
+    if (mm > 12) { yyyy += 1; mm -= 12; }
+
+    if (dd < 10) { dd = '0' + dd }
+    if (mm < 10) { mm = '0' + mm }
+
+    today = yyyy + '-' + mm + '-' + dd;
+    document.getElementById("RandevuTarihi").setAttribute("max", today);
+
+</script>
+@section validation{
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}

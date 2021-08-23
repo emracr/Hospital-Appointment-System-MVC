@@ -1,0 +1,405 @@
+* {
+    font-family: 'Oxygen', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #35a7fe;
+}
+
+.giris-ekran {
+    width: 40%;
+    height: auto;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 10px;
+    box-shadow: 0px 00px 30px #fff;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+}
+
+.form-control {
+    font-weight: 500;
+    letter-spacing: 1px;
+    display: inline-block;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: 1px solid #808080;
+    border-radius: 0px;
+    width: 85%;
+    font-weight: 600;
+    padding-left: 40px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.error-validation-message-tc {
+    color: #de1111;
+    padding: 0px;
+    margin-top: 0px;
+    margin-left: 38px;
+    margin-bottom: 20px;
+}
+
+.error-validation-message-parola {
+    color: #de1111;
+    padding: 0px;
+    margin-top: 0px;
+    margin-left: 38px;
+    margin-bottom: 35px;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #1090f1;
+}
+
+#giris-ekran-text {
+    color: #0f85b9;
+    font-size: 25px;
+    font-weight: 600;
+    padding-top: 10px;
+    margin-bottom: -10px;
+    letter-spacing: 2px;
+}
+
+.btn-giris {
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.fas {
+    color: #878787;
+    font-size: 20px;
+    position: relative;
+    top: 1px;
+    left: 40px;
+}
+
+.uye_ol_text {
+    font-weight: 600;
+    color: #676767;
+}
+
+.error-alert {
+    background-color: #be403a;
+    color: #fff;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    text-align:center;
+}
+
+.error-alert > p {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 10px;
+}
+
+.error-alert > i{
+    color:#fff;
+    position:relative;
+    top:12px;
+    float:left;
+    margin-left:-20px;
+}
+
+/*Responsive*/
+@media screen and (max-width: 1250px){
+    .error-alert > p {
+        font-size: 14px;
+    }
+
+    .error-alert > i {
+        font-size: 15px;
+        margin-left: -25px;
+    }
+}
+@media screen and (max-width: 1100px) {
+
+    .form-control {
+        padding-left: 30px;
+        margin-left: 6px;
+        margin-top: 20px;
+        font-size: 15px;
+    }
+
+    .fas {
+        color: #878787;
+        font-size: 18px;
+        position: relative;
+        top: 1px;
+        left: 30px;
+    }
+
+    #giris-ekran-text {
+        color: #0f85b9;
+        font-size: 20px;
+        font-weight: 600;
+        padding-top: 0px;
+        margin-bottom: -10px;
+        letter-spacing: 2px;
+    }
+
+    .uye_ol_text {
+        font-size: 15px;
+    }
+
+    .parola_unuttum_text {
+        font-size: 15px;
+    }
+
+    .btn-giris {
+        font-weight: 500;
+        letter-spacing: 2px;
+        font-size: 15px;
+    }
+
+    .alert {
+        font-size: 15px;
+        text-align: center;
+        padding: 5px 2px;
+    }
+
+    .error-validation-message-tc {
+        color: #de1111;
+        padding: 0px;
+        margin-top: 0px;
+        margin-left: 31px;
+        margin-bottom: 20px;
+        font-size: 15px;
+    }
+
+    .error-validation-message-parola {
+        color: #de1111;
+        padding: 0px;
+        margin-top: 0px;
+        margin-left: 27px;
+        margin-bottom: 35px;
+        font-size: 15px;
+    }
+
+    .error-alert > p {
+        font-size: 13px;
+    }
+
+    .error-alert > i {
+        font-size: 14px;
+        margin-left: -5px;
+    }
+}
+@media screen and (max-width: 1250px){
+ 
+    .error-alert > p {
+        text-align:center;
+    }
+}
+@media screen and (max-width: 1150px){
+
+    .error-alert > i {
+        margin-left: -30px;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .form-control {
+        padding-left: 30px;
+        margin-left: 0px;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    .fas {
+        color: #878787;
+        font-size: 18px;
+        position: relative;
+        top: 1px;
+        left: 25px;
+    }
+
+    .alert {
+        font-size: 13px;
+        text-align: center;
+        padding: 3px 1px;
+    }
+
+    .error-validation-message-tc {
+        color: #de1111;
+        padding: 0px;
+        margin-top: 0px;
+        margin-left: 25px;
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+
+    .error-validation-message-parola {
+        color: #de1111;
+        padding: 0px;
+        margin-top: 0px;
+        margin-left: 21px;
+        margin-bottom: 35px;
+        font-size: 14px;
+    }
+    .error-alert > p {
+       clear:left;
+       display:block;
+       text-align:center;
+    }
+
+    .error-alert > i {
+        clear:right;
+        display:block;
+        width:100%;
+        margin-bottom:5px;
+    }
+}
+@media screen and (max-width: 810px) {
+    .error-alert > p {
+        font-size: 12px;
+        text-align: center;
+        margin-right: -5px;
+    }
+
+    .error-alert > i {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 700px) {
+
+    .alert {
+        font-size: 14px;
+        width: 80%;
+        text-align: center;
+        padding: 5px 2px;
+        position: relative;
+        left: -20px;
+    }
+
+    .error-validation-message-tc {
+        color: #de1111;
+        padding: 0px;
+        margin-top: 0px;
+        margin-left: 25px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        margin-bottom: -10px;
+    }
+
+    .error-validation-message-parola {
+        color: #de1111;
+        padding: 0px;
+        margin-top: 0px;
+        margin-left: 20px;
+        margin-bottom: 35px;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+
+    .form-control {
+        padding-left: 30px;
+        margin-left: -5px;
+        margin-top: 20px;
+        font-size: 13px;
+    }
+
+    .fas {
+        color: #878787;
+        font-size: 15px;
+        position: relative;
+        top: -1px;
+        left: 20px;
+    }
+
+    #giris-ekran-text {
+        color: #0f85b9;
+        font-size: 17px;
+        font-weight: 600;
+        padding-top: 0px;
+        margin-bottom: -10px;
+        letter-spacing: 2px;
+    }
+
+    .uye_ol_text {
+        font-size: 13px;
+    }
+
+    .parola_unuttum_text {
+        font-size: 13px;
+    }
+
+    .btn-giris {
+        font-weight: 500;
+        letter-spacing: 2px;
+        font-size: 12px;
+    }
+
+    input[type="Password"] {
+        margin-bottom: 5px;
+    }
+
+    .alert {
+        font-size: 12px;
+        text-align: center;
+        padding: 2px 0px;
+        width: 90%;
+        position: relative;
+        left: -38px;
+    }
+
+    .error-validation-message-tc {
+        color: #de1111;
+        padding: 0px;
+        margin-top: 0px;
+        margin-left: 17px;
+        margin-bottom: -20px;
+        font-size: 13px;
+    }
+
+    .error-validation-message-parola {
+        color: #de1111;
+        padding: 0px;
+        margin-top: 0px;
+        margin-left: 12px;
+        margin-bottom: 35px;
+        font-size: 13px;
+        margin-bottom: 0px;
+    }
+}
+
+@media screen and (max-width: 603px) {
+    .error-alert > p {
+        font-size: 11px;
+        text-align: center;
+    }
+
+    .error-alert > i {
+        font-size: 12px;
+        text-align:center;
+    }
+}
+
+@media screen and (max-width: 550px) {
+
+    .error-alert > p {
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .error-alert > i {
+        font-size: 12px;
+        margin-left: -17px;
+    }
+}

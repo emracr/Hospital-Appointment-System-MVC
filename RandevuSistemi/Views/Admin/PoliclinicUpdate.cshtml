@@ -1,0 +1,25 @@
+﻿@model RandevuSistemi.Models.Tables.Poliklinik
+@{
+    ViewBag.Title = "PoliclinicUpdate";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="poliklinik-ekle-container-sub-div">
+        @using (Html.BeginForm("PoliclinicUpdate", "Admin", FormMethod.Post))
+        {
+            <div class="mt-5">
+                <label>POLİKLİNİK ADI</label>
+                <div class="input-group">
+                    <span style="font-size: 20px; margin-top: 3px; margin-right: 5px;"><i class="fa fa-user" aria-hidden="true"></i></span>
+                    @Html.TextBoxFor(m => m.PoliklinikAdi, new { @class = "form-control", @maxlength = "30", @required = "required" })
+                </div>
+                <p class="error-validation-message">@Html.ValidationMessageFor(m => m.PoliklinikAdi)</p>
+            </div>
+            <div class="d-flex justify-content-center mt-5">
+                <button type="submit" class="btn btn-success mt-4">Güncelle</button>
+            </div>
+        }
+    </div>
+</div>
+

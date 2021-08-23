@@ -1,0 +1,38 @@
+﻿@model List<RandevuSistemi.Models.Tables.Randevu>
+@{
+    ViewBag.Title = "AppointmentsData";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="appointment-data-sub-div d-flex justify-content-center">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Ad</th>
+                    <th scope="col">Soyad</th>
+                    <th scope="col">Randevu Tarihi</th>
+                    <th scope="col">Randevu Saati</th>
+                    <th scope="col">Poliklinik</th>
+                    <th scope="col">Doktor</th>
+                    <th scope="col">Sil</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Vatandaslar.Ad</td>
+                        <td>@item.Vatandaslar.Soyad</td>
+                        <td>@item.RandevuTarihi.ToLongDateString()</td>
+                        <td>@item.RandevuSaatleri.RandevuSaati</td>
+                        <td>@item.Poliklinikler.PoliklinikAdi</td>
+                        <td>@item.Hekim</td>
+                        <td class="user-delete"><a href="/Admin/AppointmentDelete/@item.Id"><i class="fas fa-trash"></i></a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

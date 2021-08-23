@@ -1,0 +1,35 @@
+﻿@model List<RandevuSistemi.Models.Tables.Hekim>
+@{
+    ViewBag.Title = "DoctorsData";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="btn-doctor-ekle-div">
+        <a href="/Admin/DoctorAdd" class="btn btn-success ml-5" id="btn-doktor-ekle">Yeni Doktor Ekle</a>
+    </div>
+    <div class="doctors-data-sub-div d-flex justify-content-center">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Ad - Soyad</th>
+                    <th scope="col">Branş</th>
+                    <th scope="col">Güncelle</th>
+                    <th scope="col">Sil</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Isim</td>
+                        <td>@item.Poliklinikler.PoliklinikAdi</td>
+                        <td class="user-update"><a href="/Admin/DoctorDataUpdate/@item.Id"><i class="fas fa-user-edit"></i></a></td>
+                        <td class="user-delete"><a href="/Admin/DoctorDelete/@item.Id"><i class="fas fa-trash"></i></a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

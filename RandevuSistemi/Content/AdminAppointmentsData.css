@@ -1,0 +1,39 @@
+﻿.table{
+    width:100% !important;
+    margin:0px;
+    margin-top:150px !important;
+}
+.appointment-data-sub-div{
+    margin:0px;
+    margin-left:50px !important;
+    padding:0px;
+    width:100%;
+}
+@media screen and (max-width:1240px){
+    .table{
+        width:70% !important;
+        margin-right:-250px;
+    }
+}
+
+@media screen and (max-width:1020px){
+    .table tr{
+        font-size:14px;
+    }
+}
+
+@media screen and (max-width:900px){
+     .table{
+        width:70% !important;
+        margin-right:-150px;
+    }
+    .table tr{
+        font-size:13px;
+    }
+}
+
+@media screen and (max-width:620px){
+    .table tr{
+        font-size:9px;
+    }
+}

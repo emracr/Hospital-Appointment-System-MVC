@@ -1,0 +1,37 @@
+﻿@model RandevuSistemi.Models.Tables.Hekim
+@{
+    ViewBag.Title = "DoctorAdd";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="doctoradd-container-sub-div">
+        @using (Html.BeginForm("DoctorAdd", "Admin", FormMethod.Post))
+        {
+            <div class="mt-5">
+                <label class="mb-0">AD - SOYAD</label>
+                <div class="input-group">
+                    <span style="font-size: 20px; margin-top: 3px; margin-right: 5px;"><i class="fa fa-user" aria-hidden="true"></i></span>
+                    @Html.TextBoxFor(m => m.Isim, new { @class = "form-control", @maxlength = "30", @required = "required" })
+                </div>
+                <p class="error-validation-message">@Html.ValidationMessageFor(m => m.Isim)</p>
+            </div>
+            <div class="mt-5">
+                <label class="mb-0 mt-3">BRANŞ</label>
+                <div class="input-group">
+                    <span style="font-size: 20px; margin-top: 3px; margin-right: 5px;"><i class="fa fa-user" aria-hidden="true"></i></span>
+                    @if (ViewBag.Poliklinikler != null)
+                    {
+                        @Html.DropDownListFor(m => m.Brans, ViewBag.Poliklinikler as SelectList, "--Lütfen Branş Seçin--", new { @class = "form-control", @required = "required" })
+                    }
+                </div>
+                <p class="error-validation-message">@Html.ValidationMessageFor(m => m.Brans)</p>
+            </div>
+            <div class="d-flex justify-content-center mt-5">
+                <button type="submit" class="btn btn-success mt-4">Ekle</button>
+            </div>
+        }
+    </div>
+</div>
+
+

@@ -1,0 +1,35 @@
+﻿@model RandevuSistemi.Models.Tables.Hekim
+@{
+    ViewBag.Title = "DoctorDataUpdate";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="doctorupdate-container-sub-div">
+        @using (Html.BeginForm("DoctorDataUpdate", "Admin", FormMethod.Post))
+        {
+            <div class="mt-5">
+                <label>AD - SOYAD</label>
+                <div class="input-group">
+                    <span style="font-size: 20px; margin-top: 3px; margin-right: 5px;"><i class="fa fa-user" aria-hidden="true"></i></span>
+                    @Html.TextBoxFor(m => m.Isim, new { @class = "form-control", @maxlength = "30", @required = "required" })
+                </div>
+                <p class="error-validation-message">@Html.ValidationMessageFor(m => m.Isim)</p>
+            </div>
+            <div class="mt-5">
+                <label>BRANŞ</label>
+                <div class="input-group">
+                    <span style="font-size: 20px; margin-top: 3px; margin-right: 5px;"><i class="fa fa-user" aria-hidden="true"></i></span>
+                    @if (ViewBag.Poliklinikler != null)
+                    {
+                        @Html.DropDownListFor(m => m.Brans, ViewBag.Poliklinikler as SelectList, new { @class = "form-control"})
+                    }
+                </div>
+                <p class="error-validation-message">@Html.ValidationMessageFor(m => m.Brans)</p>
+            </div>
+            <div class="d-flex justify-content-center mt-5">
+                <button type="submit" class="btn btn-success mt-4">Güncelle</button>
+            </div>
+        }
+    </div>
+</div>

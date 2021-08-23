@@ -1,0 +1,74 @@
+﻿@model RandevuSistemi.Models.Tables.Vatandas
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="../../Files/favicon.png" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Randevu Sistemi</title>
+    <link href="~/Content/Login.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="giris-ekran">
+        <div class="d-flex justify-content-center">
+            <h4 class="row mt-4 pb-3" id="giris-ekran-text">Giriş Ekranı</h4>
+        </div>
+        @if (ViewBag.ResultMessage != null)
+        {
+            <div class="error-alert">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p>@ViewBag.ResultMessage</p>
+            </div>
+        }
+        <div>
+            @using (Html.BeginForm("Login", "Home", FormMethod.Post, new { @autocomplete = "off" }))
+            {
+                <div class="form-group">
+                    <label><i class="fas fa-id-card"></i></label>
+                    @Html.TextBoxFor(m => m.TC, new { @class = "form-control", @placeholder = "TC Kimlik/Kullanıcı adı", @maxlength = "15" })
+                    <p class="error-validation-message-tc">@Html.ValidationMessageFor(m => m.TC)</p>
+                </div>
+                <div class="form-group">
+                    <label style="padding-left:5px;"><i class="fas fa-lock"></i></label>
+                    @Html.TextBoxFor(m => m.Parola, new { @class = "form-control", @type = "password", @placeholder = "Parola", @maxlength = "30" })
+                    <p class="error-validation-message-parola">@Html.ValidationMessageFor(m => m.Parola)</p>
+                </div>
+                <div class="d-flex justify-content-center w-75 mx-auto">
+                    <button type="submit" class="btn btn-primary w-50 mt-2 btn-giris">Giriş</button>
+                </div>
+            }
+        </div>
+        <div class="mt-3 uye_ol_text">
+            <div class="d-flex justify-content-center links mb-3 row">
+                Hesabınız yok mu? <a href="@Url.Action("Register","Home")" class="ml-2">Kayıt ol</a>
+            </div>
+            <div class="d-flex justify-content-center links mb-3 parola_unuttum_text">
+                <a href="@Url.Action("PasswordReset", "User")">Parolamı unuttum</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+</body>
+</html>

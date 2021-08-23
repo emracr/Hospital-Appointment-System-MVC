@@ -1,0 +1,24 @@
+﻿* {
+    font-family: 'Oxygen', sans-serif;
+}
+.container-sub-div{
+    width: 50%;
+}
+.container-sub-div .error-validation-message{
+    color: #de1111;
+    position:relative;
+    top:-25px;
+    margin-bottom:-25px;
+}
+.input-group > .form-control{
+    border:none;
+    outline:none;
+    box-shadow:none;
+}
+.error-validation-message {
+    color: #d10505;
+    padding: 0px;
+    margin-top: -5px;
+    margin-bottom: 15px;
+    margin-left:0px;
+}

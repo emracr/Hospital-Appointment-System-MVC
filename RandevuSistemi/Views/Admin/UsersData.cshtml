@@ -1,0 +1,44 @@
+﻿@model List<RandevuSistemi.Models.Tables.Vatandas>
+@{
+    ViewBag.Title = "UsersData";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="user-data-sub-div">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">TC/Kullanıcı adı</th>
+                    <th scope="col">Ad</th>
+                    <th scope="col">Soyad</th>
+                    <th scope="col">Telefon</th>
+                    <th scope="col">E Mail</th>
+                    <th scope="col">Doğum Tarihi</th>
+                    <th scope="col">Cinsiyet</th>
+                    <th scope="col">Rol</th>
+                    <th scope="col">Güncelle</th>
+                    <th scope="col">Sil</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">@item.TC</th>
+                        <td>@item.Ad</td>
+                        <td>@item.Soyad</td>
+                        <td>@item.Telefon</td>
+                        <td>@item.EMail</td>
+                        <td>@item.DogumTarihi.ToShortDateString()</td>
+                        <td>@item.Cinsiyet</td>
+                        <td>@item.Role</td>
+                        <td class="user-update"><a href="/Admin/UserDataUpdate/@item.TC"><i class="fas fa-user-edit"></i></a></td>
+                        <td class="user-delete"><a href="/Admin/UserDelete/@item.TC"><i class="fas fa-trash"></i></a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

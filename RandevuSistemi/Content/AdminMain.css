@@ -1,0 +1,147 @@
+body
+{
+	padding: 0;
+	margin: 0;
+}
+*
+{
+	font-family: 'Oxygen', sans-serif;
+}
+#container
+{
+	width: 100%;
+}
+.top-header
+{
+	background-color: #2882b6;	
+	width: 100%;
+	color: #fff;
+	overflow: auto;
+    position: fixed;
+    top:0;
+    z-index:1;
+}
+.top-header h3
+{
+	margin-left: 15px;
+	float: left;
+    padding:15px;
+    letter-spacing:2px;
+}
+.right-div{
+    text-align:center;
+    float:right;
+    margin-right:20px;
+    margin-top:20px;
+}
+.right-div > p{
+    float:left;
+    display:inline-block;
+    font-size:17px;
+    font-weight:600;
+    margin-right:50px;
+    margin-top:3px;
+}
+.right-div > a{
+    color:#fff;
+    font-size:19px;
+    margin-right:10px;
+
+}
+.right-div > a:hover{
+    text-decoration:none;
+    color:#dcdcdc;
+}
+.sidebar-menu
+{
+	width: 300px;
+	height: 100%;
+	background-color: #2f2f2f;
+	position: fixed;
+	left: 0;
+    top:71px;
+	transition: 0.5s;
+	transition-property: left;
+    z-index:1;
+}
+.sidebar-menu p
+{
+	color: #ccc;
+	text-align: center;
+	margin-top: 40px
+}
+.sidebar
+{
+	width: 100%;
+	margin: 100px 0px 0px 0px;
+	padding: 0;
+	height: auto;
+}
+.sidebar a
+{
+	color: #fff;
+	padding-left: 50px;
+	display: block;
+	text-decoration: none;
+	line-height: 60px;
+	box-sizing: border-box;
+	transition: 0.5s;
+	transition-property: background;
+}
+.sidebar a:hover
+{
+	background-color: #0D90C7;
+    color:white;
+    text-decoration:none;
+}
+.sidebar i
+{
+	margin-right: 10px;
+}
+#sidebar_btn
+{
+	z-index: 1;
+	position: fixed;
+	cursor: pointer;
+	font-size: 20px;
+	left: 305px;
+	margin: 70px 5px; 
+	transition: 0.5s;
+	color: #2E2E2E;
+}
+#sidebar_btn:hover
+{
+	color: #0D90C7;
+}
+#check
+{
+	display: none;
+}
+#check:checked ~ #container .sidebar-menu
+{
+	left: -210px;
+}
+#check:checked ~ #container .sidebar a span
+{
+	display: none;
+}
+#check:checked ~ #container .sidebar a
+{
+	font-size: 20px;
+	margin-left: 190px;
+}
+#check:checked ~ #container .top-header #sidebar_btn
+{
+	left: 95px;
+	margin: 70px 5px;
+}
+.content
+{
+	background-color:#fff;
+}
+
+@media screen and (max-width:550px){
+    .right-div > p{
+        display : none;
+    }
+}

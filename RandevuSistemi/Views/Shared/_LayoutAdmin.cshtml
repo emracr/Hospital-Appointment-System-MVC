@@ -1,0 +1,77 @@
+﻿@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="tr-TR">
+<head>
+    <meta charset="utf-8">
+    <title>Randevu Sistemi Admin</title>
+    <link rel="icon" type="image/png" href="../../Files/favicon.png" />
+    <link href="/Content/AdminMain.css" rel="stylesheet" type="text/css">
+    <link href="/Content/AdminIndex.css" rel="stylesheet" type="text/css">
+    <link href="/Content/AdminUsersData.css" rel="stylesheet" type="text/css">
+    <link href="/Content/AdminDoctorsData.css" rel="stylesheet" type="text/css">
+    <link href="/Content/AdminPoliclinicData.css" rel="stylesheet" type="text/css">
+    <link href="/Content/AdminAppointmentsData.css" rel="stylesheet" type="text/css">
+    <link href="/Content/AdminUserDataUpdate.css" rel="stylesheet" type="text/css">
+    <link href="/Content/AdminDoctorDataUpdate.css" rel="stylesheet" type="text/css">
+    <link href="/Content/AdminPoliclinicAdd.css" rel="stylesheet" type="text/css">
+    <link href="/Content/AdminDoctorAdd.css" rel="stylesheet" type="text/css">
+    <link href="/Content/AdminSettings.css" rel="stylesheet" type="text/css">
+    <link href="/Content/AdminPasswordUpdate.css" rel="stylesheet" type="text/css">
+    <link href="/Content/AdminAdd.css" rel="stylesheet" type="text/css">
+    <link href="/Content/AdminInfo.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <input type="checkbox" id="check" checked>
+    <!-- Main div start -->
+    <div id="container">
+        <header class="top-header">
+            <label for="check">
+                <i class="fas fa-bars" id="sidebar_btn"></i>
+            </label>
+            <h3>ADMİN PANEL</h3>
+            <div class="right-div">
+                <p>Hoşgeldin admin</p>
+                <a href="@Url.Action("Logout","Admin")"><i class="fas fa-sign-out-alt"></i><span style="font-size:17px;padding-left:4px;vertical-align:text-top">Çıkış</span></a>
+            </div>
+        </header>
+
+        <div class="sidebar-menu">
+            <div class="sidebar">
+                <a href="@Url.Action("Index","Admin")"><i class="fas fa-desktop"></i><span>Gösterge Paneli</span></a>
+                <a href="#"><i class="fas fa-cogs"></i><span>Components</span></a>
+                <a href="#"><i class="fas fa-table"></i><span>Tables</span></a>
+                <a href="#"><i class="fas fa-th"></i><span>Forms</span></a>
+                <a href="@Url.Action("Info","Admin")"><i class="fas fa-info-circle"></i><span>Hakkımızda</span></a>
+                <a href="@Url.Action("Settings","Admin")"><i class="fas fa-sliders-h"></i><span>Ayarlar</span></a>
+            </div>
+
+        </div>
+
+        <div class="content">
+            @RenderBody()
+        </div>
+
+    </div>
+    <!-- Main div end -->
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    @RenderSection("validation", false)
+
+</body>
+</html>

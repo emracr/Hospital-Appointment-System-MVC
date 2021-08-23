@@ -1,0 +1,154 @@
+﻿@model RandevuSistemi.ViewModels.RegisterViewModel
+@{
+    ViewBag.Title = "AddAdmin";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="admin-add-container-div mt-5">
+        @using (Html.BeginForm("AddAdmin", "Admin", FormMethod.Post, new { @autocomplete = "off" }))
+        {
+            <div class="admin-add">
+                <label class="mt-5">KULLANICI ADI</label>
+                <div class="input-group">
+                    <span><i class="fas fa-id-card-alt" aria-hidden="true"></i></span>
+                    @Html.TextBoxFor(m => m.TC, new { @class = "form-control", @maxlength = "15", @required = "required" })
+                </div>
+                <p class="error-validation-message">@Html.ValidationMessageFor(m => m.TC)</p>
+            </div>
+            <div class="admin-add">
+                <label>AD</label>
+                <div class="input-group">
+                    <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                    @Html.TextBoxFor(m => m.Ad, new { @class = "form-control", @placeholder = "Örnek : EMRULLAH", @maxlength = "30", @required = "required" })
+                </div>
+                <p class="error-validation-message">@Html.ValidationMessageFor(m => m.Ad)</p>
+            </div>
+            <div class="admin-add">
+                <label>SOYAD</label>
+                <div class="input-group">
+                    <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                    @Html.TextBoxFor(m => m.Soyad, new { @class = "form-control", @placeholder = "Örnek : ACAR", @maxlength = "30", @required = "required" })
+                </div>
+                <p class="error-validation-message">@Html.ValidationMessageFor(m => m.Soyad)</p>
+            </div>
+            <div class="admin-add">
+                <label>DOĞUM TARİHİ</label>
+                <div class="input-group">
+                    <span><i class="fas fa-calendar-week" aria-hidden="true"></i></span>
+                    @Html.TextBoxFor(m => m.DogumTarihi, new { @class = "form-control", @type = "date", @required = "required" })
+                </div>
+                <p class="error-validation-message">@Html.ValidationMessageFor(m => m.DogumTarihi)</p>
+            </div>
+            <div class="admin-add">
+                <label>CİNSİYET</label>
+                <div class="form-group ml-0 mt-3 mb-1" style="border-bottom:1px solid #b6b6b6;">
+                    <label>
+                        <i class="fas fa-male" style="font-size: 27px; margin-top: -4px; margin-right: 4px; color: #575757"></i>
+                        @Html.RadioButtonFor(m => m.Cinsiyet, "Erkek", new { @required = "required", @style = "margin-bottom:12px;" }) Erkek
+                    </label>
+
+                    <label class="ml-3">
+                        <i class="fas fa-female" style="font-size: 27px; margin-top: -4px; margin-right: 2px; color: #575757"></i>
+                        @Html.RadioButtonFor(m => m.Cinsiyet, "Kadın", new { @required = "required", @style = "margin-bottom:12px;" }) Kadın
+                    </label>
+                </div>
+                <p class="error-validation-message" style="margin-top:-5px;">@Html.ValidationMessageFor(m => m.Cinsiyet)</p>
+            </div>
+            <div class="admin-add">
+                <label style="margin-top:5px;">EMAİL</label>
+                <div class="input-group">
+                    <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                    @Html.TextBoxFor(m => m.EMail, new { @class = "form-control", @placeholder = "Örnek : acar@gmail.com", @maxlength = "50", @type = "email", @required = "required" })
+                </div>
+                <p class="error-validation-message">@Html.ValidationMessageFor(m => m.EMail)</p>
+            </div>
+            <div class="admin-add">
+                <label>TELEFON NUMARASI</label>
+                <div class="input-group">
+                    <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                    @Html.TextBoxFor(m => m.Telefon, new { @class = "form-control", @placeholder = "Örnek : 05521111111", @maxlength = "11", @autocomplete = "off", @required = "required", @pattern = "[0-9]{4}[0-9]{3}[0-9]{4}" })
+                </div>
+                <p class="error-validation-message">@Html.ValidationMessageFor(m => m.Telefon)</p>
+            </div>
+            <div class="admin-add">
+                <label>GÜVENLİK SORUSU</label>
+                <div class="input-group">
+                    <span><i class="fas fa-shield-alt" aria-hidden="true"></i></span>
+                    @Html.DropDownListFor(m => m.GuvenlikSorusu, new List<SelectListItem> {
+                            new SelectListItem() { Text = "Annnenizin doğum yeri?", Value = "Annnenizin doğum yeri?" },
+                            new SelectListItem() { Text = "İlkokuldaki en iyi arkadaşınızın adı?", Value = "İlkokuldaki en iyi arkadaşınızın adı?" },
+                            new SelectListItem() { Text = "En çok sevdiğiniz kitap?", Value = "En çok sevdiğiniz kitap?" },
+                            new SelectListItem() { Text = "En çok sevdiğiniz renk?", Value = "En çok sevdiğiniz renk?" },
+                            new SelectListItem() { Text = "İlkokul öğretmeninin soyadı?", Value = "İlkokul öğretmeninin soyadı?" },
+                            new SelectListItem() { Text = "İlkokuldaki öğrenci numaranız?", Value = "İlkokuldaki öğrenci numaranız?" }}, "Güvenlik Sorusu Seçin", new { @class = "form-control", @placeholder = "Güvenik Sorusu", @required = "required" })
+                </div>
+                <p class="error-validation-message">@Html.ValidationMessageFor(m => m.GuvenlikSorusu)</p>
+            </div>
+            <div class="admin-add">
+                <label>GÜVENLİK YANITI</label>
+                <div class="input-group">
+                    <span><i class="fas fa-shield-alt" aria-hidden="true"></i></span>
+                    @Html.TextBoxFor(m => m.GuvenlikCevabi, new { @class = "form-control", @style = "margin-bottom:2px;", @placeholder = "Güvenlik Yanıtı", @maxlength = "50", @required = "required" })
+                </div>
+                <p class="error-validation-message">@Html.ValidationMessageFor(m => m.GuvenlikCevabi)</p>
+            </div>
+            <div class="admin-add">
+                <label>PAROLA</label>
+                <div class="input-group">
+                    <span><i class="fa fa-lock" aria-hidden="true"></i></span>
+                    @Html.TextBoxFor(m => m.Parola, new { @class = "form-control", @type = "password", @placeholder = "Parola", @maxlength = "30", @required = "required" })
+                </div>
+                <p class="error-validation-message">@Html.ValidationMessageFor(m => m.Parola)</p>
+            </div>
+            <div class="admin-add">
+                <label>PAROLA TEKRAR</label>
+                <div class="input-group">
+                    <span><i class="fa fa-lock" aria-hidden="true"></i></span>
+                    @Html.TextBoxFor(m => m.ParolaTekrar, new { @class = "form-control", @type = "password", @placeholder = "Parola Terar", @maxlength = "30", @required = "required" })
+                </div>
+                <p class="error-validation-message">@Html.ValidationMessageFor(m => m.ParolaTekrar)</p>
+            </div>
+            <div class="clear"></div>
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-success" type="submit" id="admin-kayit-tamamla">KAYDI TAMAMLA<i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+            </div>
+        }
+    </div>
+</div>
+
+@section validation{
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}
+
+<script>
+
+    // Doğum tarihi için takvim maximum bulunduğumuz tarih için ayarlandı
+
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
+
+    if (dd < 10) { dd = '0' + dd }
+    if (mm < 10) { mm = '0' + mm }
+
+    today = yyyy + '-' + mm + '-' + dd;
+    document.getElementById("DogumTarihi").setAttribute("max", today);
+
+    // Doğum tarihi için takvim minimum tarih için ayarlandı
+
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear() - 100;
+
+    if (dd < 10) { dd = '0' + dd }
+    if (mm < 10) { mm = '0' + mm }
+
+    today = yyyy + '-' + mm + '-' + dd;
+    document.getElementById("DogumTarihi").setAttribute("min", today);
+
+</script>
+

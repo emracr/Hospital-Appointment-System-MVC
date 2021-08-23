@@ -1,0 +1,90 @@
+﻿* {
+    font-family: 'Oxygen', sans-serif;
+}
+
+body {
+    background-color: #35a7fe;
+    margin:0;
+    padding:0;
+}
+.text{
+    margin:35px;
+    font-size:35px;
+    letter-spacing:1px;
+    font-weight:600;
+    color:#7c7c7c;
+    text-align:center;
+}
+.container{
+    width: 50%;
+    height: auto;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #fff;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+}
+.pass-reset-content{
+    width:70%;
+}
+.input-group > .form-control{
+    font-weight: 500;
+    letter-spacing: 1px;
+    display: inline-block;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: 1px solid #808080;
+    border-radius: 0px;
+    width: 85%;
+    font-weight: 600;
+    padding-left: 35px;
+    margin-left: 10px;
+    margin-bottom:40px;
+    position:relative;
+    left:-15px;
+}
+#btn-pass-search{
+    margin-bottom:30px;
+    position:relative;
+    left:40%;
+}
+.error-validation-message {
+    color: #d10505;
+    padding: 0px;
+    margin-top: -35px;
+    margin-bottom: 15px;
+    margin-left:18px;
+}
+.error-alert {
+    background-color: #be403a;
+    color: #fff;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.error-alert > p {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 10px;
+}
+
+.error-alert > i{
+    color:#fff;
+    position:relative;
+    top:14px;
+    left:10px;
+    float:left;
+}
+.SecurityQusetion{
+    text-align:center;
+    margin-bottom:30px;
+}

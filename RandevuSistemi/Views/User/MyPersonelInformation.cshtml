@@ -1,0 +1,92 @@
+﻿@model RandevuSistemi.Models.Tables.Vatandas
+@{
+    ViewBag.Title = "MyPersonelInformation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container d-flex justify-content-center">
+    <div class="container-sub-div">
+        <h1 style="color:#868686;font-size:30px;font-weight:400;">KİŞİSEL BİLGİLER</h1>
+        @using (Html.BeginForm("MyPersonelInformationUpdate", "User", FormMethod.Post))
+        {
+            <div class="mt-5">
+                <label>AD</label>
+                <div class="input-group">
+                    <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                    @Html.TextBoxFor(m => m.Ad, new { @class = "form-control", @maxlength = "30", @required = "required" })
+                </div>
+                <p class="error-validation-message">@Html.ValidationMessageFor(m => m.Ad)</p>
+            </div>
+            <div class="mt-5">
+                <label>SOYAD</label>
+                <div class="input-group">
+                    <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                    @Html.TextBoxFor(m => m.Soyad, new { @class = "form-control", @maxlength = "30", @required = "required" })
+                </div>
+                <p class="error-validation-message">@Html.ValidationMessageFor(m => m.Soyad)</p>
+            </div>
+            <div class="mt-5">
+                <label>DOĞUM TARİHİ</label>
+                <div class="input-group">
+                    <span><i class="fas fa-calendar-week" aria-hidden="true"></i></span>
+                    @Html.TextBoxFor(m => m.DogumTarihi, "{0:yyyy-MM-dd}" ,new { @class = "form-control", @style = "border:none;outline:none;", @type = "date", @required = "required"})
+                </div>
+                <p class="error-validation-message">@Html.ValidationMessageFor(m => m.DogumTarihi)</p>
+            </div>
+            <div class="mt-5">
+                <label>CİNSİYET</label>
+                <div class="form-group gender-style">
+                    <label class="label-male">
+                        <i class="fas fa-male"></i>
+                        @Html.RadioButtonFor(m => m.Cinsiyet, "Erkek", new { @required = "required"}) Erkek
+                    </label>
+
+                    <label class="label-female">
+                        <i class="fas fa-female icon-female"></i>
+                        @Html.RadioButtonFor(m => m.Cinsiyet, "Kadın", new { @required = "required"}) Kadın
+                    </label>
+                </div>
+                <p class="error-validation-message" style="margin-top:-5px;">@Html.ValidationMessageFor(m => m.Cinsiyet)</p>
+            </div>
+
+            <div class="d-flex justify-content-center mt-5">
+                <button type="submit" class="btn btn-success mt-3">Güncelle</button>
+            </div>
+        }
+    </div>
+</div>
+
+<script>
+
+    // Doğum tarihi için takvim maximum bulunduğumuz tarih için ayarlandı
+
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
+
+    if (dd < 10) { dd = '0' + dd }
+    if (mm < 10) { mm = '0' + mm }
+
+    today = yyyy + '-' + mm + '-' + dd;
+    document.getElementById("DogumTarihi").setAttribute("max", today);
+
+    // Doğum tarihi için takvim minimum tarih için ayarlandı
+
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear() - 100;
+
+    if (dd < 10) { dd = '0' + dd }
+    if (mm < 10) { mm = '0' + mm }
+
+    today = yyyy + '-' + mm + '-' + dd;
+    document.getElementById("DogumTarihi").setAttribute("min", today);
+
+</script>
+
+@section validation{
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}

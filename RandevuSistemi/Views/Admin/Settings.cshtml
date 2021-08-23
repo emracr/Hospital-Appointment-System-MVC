@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Settings";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="settigs-container-sub">
+       <a href="@Url.Action("AdminPasswordUpdate","Admin")">
+           <div class="settings-content">
+               <i class="fas fa-key"></i>
+               <p>Parola Değiştir</p>
+           </div>
+       </a>
+       <a href="@Url.Action("AddAdmin", "Admin")">
+           <div class="settings-content">
+               <i class="fas fa-user-shield"></i>
+               <p>Admin Ekle</p>
+           </div>
+       </a>
+    </div>
+</div>
+

@@ -1,0 +1,67 @@
+﻿* {
+    font-family: 'Oxygen', sans-serif;
+}
+.container-sub-div{
+    width: 50%;
+}
+.error-validation-message {
+    color: #d10505;
+    padding: 0px;
+    margin-top: -5px;
+    margin-bottom: 15px;
+    margin-left:0px;
+}
+#btn-update-personelinformation{
+    background-color: #0069d9;
+    color:white;
+    padding:15px;
+    width:20%;
+    text-align:center;
+    border-radius:3px;
+}
+.container-sub-div .error-validation-message{
+    color: #de1111;
+    position:relative;
+    top:0px;
+}
+.input-group > .form-control{
+    border:none;
+    outline:none;
+    box-shadow:none;
+    background-color:#fff;
+}
+.label-male > i{
+    font-size:25px;
+    margin-left:-16px;
+    margin-top:-4px;
+    margin-right:8px;
+}
+.label-female > i{
+    font-size:25px;
+    margin-top:-4px;
+    margin-right:11px;
+}
+.container-sub-div .gender-style{
+    border-bottom: 1px solid #fff;
+}
+.label-female{
+    margin-left:20px;
+ }
+
+@media screen and (max-width:660px){
+
+    .label-male{
+        clear:both;
+        display:block;
+    }
+    .label-female{
+        clear:both;
+        display:block;
+        margin-left:-17px;
+        margin-top:20px;
+    }
+    .error-validation-message {
+        font-size:13px;
+        margin-top:30px;
+    }
+}

@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Profil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="d-flex justify-content-center container-img">
+        <div>
+            <h2 class="text-profil">@Session["UserName"]</h2>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center container-img" >
+        <div>
+            <i class="fas fa-user" style="font-size:150px;"></i>
+        </div>
+    </div>
+
+    <div class="content d-flex justify-content-center">
+        <a href="@Url.Action("MyPersonelInformation","User")">
+            <div class="profil-icerik">
+                <p>Kişisel Bilgiler</p>
+            </div>
+        </a>
+
+        <a href="@Url.Action("MyContactDetails","User")">
+            <div class="profil-icerik">
+                <p>İletişim Bilgileri</p>
+            </div>
+        </a>
+
+        <a href="@Url.Action("ChangePassword","User")">
+            <div class="profil-icerik">
+                <p>Parola Değiştir</p>
+            </div>
+        </a>
+
+    </div>
+</div>
+

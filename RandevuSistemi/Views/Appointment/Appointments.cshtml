@@ -1,0 +1,97 @@
+﻿@model List<RandevuSistemi.Models.Tables.Randevu>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="../../Files/favicon.png" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Randevu Sistemi</title>
+    <link href="~/Content/Appointments.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="@Url.Action("Index","Home")"><p style="font-size:22px;color:#e1e1e1">E Randevu Sistemi</p></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("MakeAnAppointment", "Appointment")"><i class="fas fa-calendar-plus" style="margin-top:2px;margin-right:15px;color:#eeeeee;"></i>Randevu Al</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Appointments", "Appointment")"><i class="fas fa-calendar-check" style="margin-top: 2px; margin-right: 15px; color: #eeeeee;"></i>Randevularım</a>
+                </li>
+            </ul>
+            <div class="form-inline my-2 my-lg-0">
+                <p class="userNameText">@Session["UserName"]</p>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item"><a href="@Url.Action("Profil", "User")" class="nav-link"><i class="fas fa-user" style="margin-top: 2px; margin-right: 15px; color: #eeeeee;"></i> Profil</a></li>
+                    <li class="nav-item"><a href="@Url.Action("Logout", "Home")" class="nav-link"><i class="fas fa-sign-out-alt" style="margin-top: 4px; margin-right: 15px; color: #eeeeee;"></i> Çıkış</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div>
+        <div style="overflow-x:auto;">
+            <table class="table mt-5">
+                <thead class="thead-light">
+                    <tr class="table-head-tr">
+                        <th>Ad</th>
+                        <th>Soyad</th>
+                        <th>Randevu Tarihi</th>
+                        <th>Randevu Saati</th>
+                        <th>Poliklinik</th>
+                        <th>Doktor</th>
+                        <th>Randevunun Alındığı Tarih</th>
+                        <th>İl</th>
+                        <th>İlçe</th>
+                        <th>İptal Et</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="table-body-tr">
+                            <td style="text-transform: uppercase;">@item.Vatandaslar.Ad</td>
+                            <td style="text-transform: uppercase;">@item.Vatandaslar.Soyad</td>
+                            <td class="table-body-tr-td">@item.RandevuTarihi.ToLongDateString()</td>
+                            <td>@item.RandevuSaatleri.RandevuSaati</td>
+                            <td>@item.Poliklinikler.PoliklinikAdi</td>
+                            <td>@item.Hekim</td>
+                            <td>@item.RandevuAlmaTarihi.ToLongDateString() - @item.RandevuAlmaTarihi.ToShortTimeString()</td>
+                            <td>@item.Iller.SehirAdi</td>
+                            <td>@item.Ilce</td>
+                            <td><a href="/Appointment/AppointmentDelete/@item.Id" class="btn btn-danger" style="font-size:13px;">İptal</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

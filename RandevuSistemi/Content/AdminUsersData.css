@@ -1,0 +1,48 @@
+﻿.table{
+    width:100% !important;
+    margin:0px;
+}
+.user-update > a{
+    margin-left:25px;
+    color:#deba0f;
+}
+.user-delete > a{
+    margin-left:5px;
+    color:#d91a1a;
+}
+.user-data-sub-div{
+    margin:0px;
+    margin-left:50px !important;
+    padding:0px;
+    width:100%;
+}
+
+@media screen and (max-width:1220px){
+    .user-data-sub-div{
+        overflow-x:auto;
+        margin-left:40px;
+    }
+    .table{
+        position:relative;
+        left:-80px;
+    }
+    .user-data-sub-div > .table tr{
+        font-size:15px;
+    }
+}
+@media screen and (max-width:990px){
+    .user-data-sub-div > .table tr{
+        font-size:13px;
+    }
+}
+@media screen and (max-width:600px){
+
+    .user-data-sub-div > .table tr{
+        font-size:12px;
+    }
+    .user-data-sub-div{
+        overflow-x:auto;
+        margin-left:100px;
+    }
+
+}

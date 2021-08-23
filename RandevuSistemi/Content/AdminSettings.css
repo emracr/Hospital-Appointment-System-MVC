@@ -1,0 +1,34 @@
+﻿.settigs-container-sub{
+    width:40%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:150px;
+    transition-duration:0.3s;
+}
+.settings-content{
+    cursor:pointer;
+    display:block;
+    margin:15px;
+    border-bottom:1px solid #6b6b6b;
+}
+.settigs-container-sub > a{
+    color:#585858;
+    font-size:20px;
+    transition-duration:0.3s;
+}
+.settigs-container-sub > a:hover{
+    color:#1dad12;
+    text-decoration:none;
+    font-size:30px;
+    transition-duration:0.3s;
+}
+.settings-content > i{
+    float:left;
+    margin-right:10px;
+    margin-top:10px;
+}
+.settings-content > p{
+    margin-top:40px;
+    padding-top:3px;
+    padding-bottom:0px;
+}

@@ -1,0 +1,195 @@
+﻿@using RandevuSistemi.ViewModels
+@model RandevuSistemi.ViewModels.RegisterViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="../../Files/favicon.png" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Randevu Sistemi</title>
+    <link href="~/Content/Register.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+</head>
+<body>
+
+    <div class="signupform">
+        <div class="container">
+            <div class="agile_info">
+                <div class="w3_info">
+                    <h2>Üye Kayıt Formu</h2>
+                    @if (ViewBag.ResultMessage != null)
+                    {
+                        <div class="error-alert">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <p>@ViewBag.ResultMessage</p>
+                        </div>
+                    }
+                    @using (Html.BeginForm("Register", "Home", FormMethod.Post, new { @autocomplete = "off" }))
+                    {
+                        <div class="left margin">
+                            <label>TC KİMLİK</label>
+                            <div class="input-group">
+                                <span><i class="fas fa-id-card-alt" aria-hidden="true"></i></span>
+                                @Html.TextBoxFor(m => m.TC, new { @class = "form-control", @placeholder = "Örnek : 11111111111", @maxlength = "11", @required = "required", @pattern = "[0-9]{11}" })
+                            </div>
+                            <p class="error-validation-message">@Html.ValidationMessageFor(m => m.TC)</p>
+                        </div>
+                        <div class="left margin">
+                            <label>AD</label>
+                            <div class="input-group">
+                                <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                                @Html.TextBoxFor(m => m.Ad, new { @class = "form-control", @placeholder = "Örnek : EMRULLAH", @maxlength = "30", @required = "required" })
+                            </div>
+                            <p class="error-validation-message">@Html.ValidationMessageFor(m => m.Ad)</p>
+                        </div>
+                        <div class="left">
+                            <label>SOYAD</label>
+                            <div class="input-group">
+                                <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                                @Html.TextBoxFor(m => m.Soyad, new { @class = "form-control", @placeholder = "Örnek : ACAR", @maxlength = "30", @required = "required" })
+                            </div>
+                            <p class="error-validation-message">@Html.ValidationMessageFor(m => m.Soyad)</p>
+                        </div>
+                        <div class="left margin">
+                            <label>DOĞUM TARİHİ</label>
+                            <div class="input-group">
+                                <span><i class="fas fa-calendar-week" aria-hidden="true"></i></span>
+                                @Html.TextBoxFor(m => m.DogumTarihi, new { @class = "form-control", @style = "border:none;outline:none;", @type = "date", @required = "required" })
+                            </div>
+                            <p class="error-validation-message">@Html.ValidationMessageFor(m => m.DogumTarihi)</p>
+                        </div>
+                        <div class="left">
+                            <label>CİNSİYET</label>
+                            <div class="form-group ml-0 mt-3 mb-1 gender-style">
+                                <label>
+                                    <i class="fas fa-male" style="font-size:25px;margin-top:-4px;margin-right:11px;"></i>
+                                    @Html.RadioButtonFor(m => m.Cinsiyet, "Erkek", new { @required = "required", @style = "margin-bottom:12px;" }) Erkek
+                                </label>
+
+                                <label class="ml-3">
+                                    <i class="fas fa-female" style="font-size:25px;margin-top:-4px;margin-right:11px;"></i>
+                                    @Html.RadioButtonFor(m => m.Cinsiyet, "Kadın", new { @required = "required", @style = "margin-bottom:12px;" }) Kadın
+                                </label>
+                            </div>
+                            <p class="error-validation-message" style="margin-top:-5px;">@Html.ValidationMessageFor(m => m.Cinsiyet)</p>
+                        </div>
+                        <div class="left margin">
+                            <label>EMAİL</label>
+                            <div class="input-group">
+                                <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                                @Html.TextBoxFor(m => m.EMail, new { @class = "form-control", @placeholder = "Örnek : acar@gmail.com", @maxlength = "50", @type = "email", @required = "required" })
+                            </div>
+                            <p class="error-validation-message">@Html.ValidationMessageFor(m => m.EMail)</p>
+                        </div>
+                        <div class="left">
+                            <label>TELEFON NUMARASI</label>
+                            <div class="input-group">
+                                <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                                @Html.TextBoxFor(m => m.Telefon, new { @class = "form-control", @placeholder = "Örnek : 05521111111", @maxlength = "11", @autocomplete = "off", @required = "required", @pattern = "[0-9]{4}[0-9]{3}[0-9]{4}" })
+                            </div>
+                            <p class="error-validation-message">@Html.ValidationMessageFor(m => m.Telefon)</p>
+                        </div>
+                        <div class="left margin">
+                            <label>GÜVENLİK SORUSU</label>
+                            <div class="input-group">
+                                <span><i class="fas fa-shield-alt" aria-hidden="true"></i></span>
+                                @Html.DropDownListFor(m => m.GuvenlikSorusu, new List<SelectListItem> {
+                            new SelectListItem() { Text = "Annnenizin doğum yeri?", Value = "Annnenizin doğum yeri?" },
+                            new SelectListItem() { Text = "İlkokuldaki en iyi arkadaşınızın adı?", Value = "İlkokuldaki en iyi arkadaşınızın adı?" },
+                            new SelectListItem() { Text = "En çok sevdiğiniz kitap?", Value = "En çok sevdiğiniz kitap?" },
+                            new SelectListItem() { Text = "En çok sevdiğiniz renk?", Value = "En çok sevdiğiniz renk?" },
+                            new SelectListItem() { Text = "İlkokul öğretmeninin soyadı?", Value = "İlkokul öğretmeninin soyadı?" },
+                            new SelectListItem() { Text = "İlkokuldaki öğrenci numaranız?", Value = "İlkokuldaki öğrenci numaranız?" }}, "Güvenlik Sorusu Seçin", new { @class = "form-control", @style = "border:none;outline:none", @placeholder = "Güvenik Sorusu", @required = "required" })
+                            </div>
+                            <p class="error-validation-message">@Html.ValidationMessageFor(m => m.GuvenlikSorusu)</p>
+                        </div>
+                        <div class="left">
+                            <label>GÜVENLİK YANITI</label>
+                            <div class="input-group">
+                                <span><i class="fas fa-shield-alt" aria-hidden="true"></i></span>
+                                @Html.TextBoxFor(m => m.GuvenlikCevabi, new { @class = "form-control", @style = "margin-bottom:2px;", @placeholder = "Güvenlik Yanıtı", @maxlength = "50", @required = "required" })
+                            </div>
+                            <p class="error-validation-message">@Html.ValidationMessageFor(m => m.GuvenlikCevabi)</p>
+                        </div>
+                        <div class="left margin">
+                            <label>PAROLA</label>
+                            <div class="input-group">
+                                <span><i class="fa fa-lock" aria-hidden="true"></i></span>
+                                @Html.TextBoxFor(m => m.Parola, new { @class = "form-control", @type = "password", @placeholder = "Parola", @maxlength = "30", @required = "required" })
+                            </div>
+                            <p class="error-validation-message">@Html.ValidationMessageFor(m => m.Parola)</p>
+                        </div>
+                        <div class="left">
+                            <label>PAROLA TEKRAR</label>
+                            <div class="input-group">
+                                <span><i class="fa fa-lock" aria-hidden="true"></i></span>
+                                @Html.TextBoxFor(m => m.ParolaTekrar, new { @class = "form-control", @type = "password", @placeholder = "Parola Terar", @maxlength = "30", @required = "required" })
+                            </div>
+                            <p class="error-validation-message">@Html.ValidationMessageFor(m => m.ParolaTekrar)</p>
+                        </div>
+                        <div class="clear"></div>
+                        <button class="btn btn-danger btn-block" type="submit">KAYDI TAMAMLA<i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+                    }
+                </div>
+                <div class="w3l_form">
+                    <div class="left_grid_info">
+                        <h3>Zaten Üyemisiniz?</h3>
+                        <p>E Randevu Sistemine üye olmak için yan tarafta bulunan formu eksiksiz bir şekilde doldurmanız gerekmektedir. Formu doldurduktan sonra KAYDI TAMAMLA butonuna basmanız yeterlidir. Zaten üyeyseniz aşağıda bulunan GİRİŞ butonuna basınız.</p>
+                        <a href="@Url.Action("Login","Home")" class="btn pl-5">GİRİŞ <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        // Doğum tarihi için takvim maximum bulunduğumuz tarih için ayarlandı
+
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1;
+        var yyyy = today.getFullYear();
+
+        if (dd < 10) { dd = '0' + dd }
+        if (mm < 10) { mm = '0' + mm }
+
+        today = yyyy + '-' + mm + '-' + dd;
+        document.getElementById("DogumTarihi").setAttribute("max", today);
+
+        // Doğum tarihi için takvim minimum tarih için ayarlandı
+
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1;
+        var yyyy = today.getFullYear() - 100;
+
+        if (dd < 10) { dd = '0' + dd }
+        if (mm < 10) { mm = '0' + mm }
+
+        today = yyyy + '-' + mm + '-' + dd;
+        document.getElementById("DogumTarihi").setAttribute("min", today);
+
+    </script>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+</body>
+</html>

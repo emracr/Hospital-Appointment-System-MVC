@@ -1,0 +1,32 @@
+﻿@model List<RandevuSistemi.Models.Tables.Poliklinik>
+@{
+    ViewBag.Title = "PoliclinicData";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="btn-poliklinik-ekle-div">
+        <a href="/Admin/PoliclinicAdd" class="btn btn-success ml-5" id="btn-poliklinik-ekle">Yeni Poliklinik Ekle</a>
+    </div>
+    <div class="policlinics-data-div d-flex justify-content-center">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Poliklinik Adı</th>
+                    <th scope="col">Güncelle</th>
+                    <th scope="col">Sil</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.PoliklinikAdi</td>
+                        <td class="user-update"><a href="/Admin/PoliclinicUpdate/@item.Id"><i class="fas fa-user-edit"></i></a></td>
+                        <td class="user-delete"><a href="/Admin/PoliclinicDelete/@item.Id"><i class="fas fa-trash"></i></a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+﻿@model RandevuSistemi.Models.Tables.Vatandas
+@{
+    ViewBag.Title = "MyContactDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container d-flex justify-content-center">
+    <div class="container-sub-div">
+        <h1 style="color:#868686;font-size:30px;font-weight:400;">İLETİŞİM BİLGİLERİ</h1>
+        @using (Html.BeginForm("MyContactDetailsUpdate", "User", FormMethod.Post))
+        {
+            <div class="mt-5">
+                <label>TELEFON</label>
+                <div class="input-group">
+                    <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                    @Html.TextBoxFor(m => m.Telefon, new { @class = "form-control", @maxlength = "11", @required = "required", @pattern = "[0-9]{4}[0-9]{3}[0-9]{4}" })
+                </div>
+                <p class="error-validation-message">@Html.ValidationMessageFor(m => m.Telefon)</p>
+            </div>
+            <div class="mt-5">
+                <label>E MAİL</label>
+                <div class="input-group">
+                    <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                    @Html.TextBoxFor(m => m.EMail, new { @class = "form-control", @maxlength = "50", @type = "email", @required = "required" })
+                </div>
+                <p class="error-validation-message">@Html.ValidationMessageFor(m => m.EMail)</p>
+            </div>
+      
+            <div class="d-flex justify-content-center mt-5">
+                <button type="submit" class="btn btn-success mt-3">Güncelle</button>
+            </div>
+        }
+    </div>
+</div>
+
+@section validation{
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}
+

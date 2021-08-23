@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="../../Files/favicon.png" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+    <title>Randevu Sistemi</title>
+
+    <link href="~/Content/Index.css" rel="stylesheet" type="text/css"/>
+    <link href="~/Content/MakeAnAppointment.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="~/Content/Navbar.css" rel="stylesheet" type="text/css"/>
+    <link href="~/Content/Appointments.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Profil.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/MyPersonelInformation.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/MyContactDetails.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/ChangePassword.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Layout.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    
+    @Html.Partial("_Navbar")
+
+    @RenderBody()
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    @RenderSection("validation", false)
+
+</body>
+</html>

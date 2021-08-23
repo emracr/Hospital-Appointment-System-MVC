@@ -1,0 +1,63 @@
+﻿@model RandevuSistemi.Models.Tables.Vatandas
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Randevu Sistemi</title>
+    <link rel="icon" type="image/png" href="../../Files/favicon.png" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Content/SecurityQuestion.css" />
+</head>
+<body>
+    <div class="container d-flex justify-content-center">
+        <div class="pass-reset-content">
+            <div>
+                <h4 class="text">Güvenlik Sorusu</h4>
+            </div>
+            @if (ViewBag.SecurityQuestionResult != null)
+            {
+                <div class="error-alert">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p>@ViewBag.SecurityQuestionResult</p>
+                </div>
+            }
+            <div class="pass-reset-form">
+                @using (Html.BeginForm("SecurityQuestion", "User", FormMethod.Post, new { @autocomplete = "off" }))
+                {
+                    @Html.HiddenFor(m => m.TC, new { @style = "margin:0px;padding:0px;", @Value = TempData["userTCKN"] })
+                    <h3 class="SecurityQusetion">@TempData["userSecurityQuestion"]</h3>
+                    <div class="input-group">
+                        <span><i class="fas fa-shield-alt" aria-hidden="true" style="color:#808080;font-size:20px;position:relative;top:7px;left:20px;"></i></span>
+                        @Html.TextBoxFor(m => m.GuvenlikCevabi, new { @class = "form-control", @placeholder = "Güvenlik Sorusunun Cevabı", @required = "required" })
+                    </div>
+                    <p class="error-validation-message">@Html.ValidationMessageFor(m => m.GuvenlikCevabi)</p>
+                    
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-outline-info" id="btn-pass-search">Sorgula</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+</body>
+</html>

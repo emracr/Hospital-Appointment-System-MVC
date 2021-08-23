@@ -1,0 +1,22 @@
+﻿.poliklinik-ekle-container-sub-div{
+    width:60%;
+    margin-top:150px;
+    margin-bottom:50px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.error-validation-message {
+    color: #d10505;
+    padding: 0px;
+    margin-top: -28px;
+    margin-bottom: -5px;
+}
+.input-group{
+    margin-top:10px;
+}
+.text-warning-add-poliklinik{
+    color:#e40f0f;
+    margin-top:50px;
+    font-size:22px;
+    margin-left:30px;
+}

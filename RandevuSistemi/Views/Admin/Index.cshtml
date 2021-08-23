@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="container-sub-div">
+        
+        <div class="content-div-1">
+            <a href="@Url.Action("UsersData","Admin")">
+                <div class="content-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="content-text">
+                    <p>Kullanıcı</p>
+                </div>
+                <div class="content-total">
+                    <p>@ViewBag.UserTotal</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="content-div-2">
+            <a href="@Url.Action("DoctorsData","Admin")">
+                <div class="content-icon">
+                    <i class="fas fa-user-md"></i>
+                </div>
+                <div class="content-text">
+                    <p>Hekim</p>
+                </div>
+                <div class="content-total">
+                    <p>@ViewBag.DoctorTotal</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="content-div-3">
+            <a href="@Url.Action("AppointmentsData","Admin")">
+                <div class="content-icon">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="content-text">
+                    <p>Randevu</p>
+                </div>
+                <div class="content-total">
+                    <p>@ViewBag.AppointmentTotal</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="content-div-4">
+            <a href="@Url.Action("PoliclinicData","Admin")">
+                <div class="content-icon">
+                    <i class="fas fa-clinic-medical"></i>
+                </div>
+                <div class="content-text">
+                    <p>Poliklinik</p>
+                </div>
+                <div class="content-total">
+                    <p>@ViewBag.PoliclinicTotal</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+

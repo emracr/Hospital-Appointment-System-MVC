@@ -1,0 +1,33 @@
+﻿*{
+    font-family: 'Oxygen', sans-serif;
+}
+.nav-item a{
+    color:#eaeaea !important;
+}
+.userNameText{
+    color:#e8e8e8 !important;
+    text-transform:uppercase;
+    letter-spacing:1px !important;
+    margin-top:2px !important;
+    font-size:14px !important;
+    font-weight: 600 !important;
+}
+
+@media screen and (max-width:991px){
+
+    .form-inline > .userNameText{
+        position:relative;
+        top:-30px;
+        left:20px;
+    }
+    .form-inline > .navbar-right{
+        margin-left:-90px;
+        margin-top:40px;
+    }
+}
+
+@media screen and (max-width:500px){
+    .form-inline{
+        margin-left:-15px;
+    }
+}
