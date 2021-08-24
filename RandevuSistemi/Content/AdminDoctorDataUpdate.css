@@ -1,8 +1,9 @@
-﻿.doctorupdate-container-sub-div{
-    width:60%;
-    margin-bottom:50px;
-    margin-left:auto;
-    margin-right:auto;
+﻿.doctorupdate-container-sub-div {
+    width: 60%;
+    margin-top: 150px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .error-validation-message {
     color: #d10505;

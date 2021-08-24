@@ -28,6 +28,10 @@ body
     padding:15px;
     letter-spacing:2px;
 }
+.top-header h3 a{
+	text-decoration: none;
+	color: rgb(240, 240, 240);
+}
 .right-div{
     text-align:center;
     float:right;
