@@ -33,3 +33,11 @@
 | Admin - Change Password | Admin - Add New Admin |
 | --- | --- |
 | ![Admin12](https://github.com/user-attachments/assets/c40c363f-d316-4445-9d07-fbdcf5bfed8e) | ![Admin13](https://github.com/user-attachments/assets/114575b3-33d2-4822-bab8-3cf1627f0f89) |
+
+| Password Reset - User Identity Validation | Password Reset - Security Question Validation |
+| --- | --- |
+| ![PR1](https://github.com/user-attachments/assets/9b179f66-1cdc-4f5b-918f-79ecf0c92160) | ![PR2](https://github.com/user-attachments/assets/05c0d71f-9cf4-4d18-bc61-d7d496c998c5) |
+
+| Password Reset - New Password
+| --- |
+| ![PR3](https://github.com/user-attachments/assets/7e0bace8-8c65-4ecf-9769-db57fe0eb6ee) |
