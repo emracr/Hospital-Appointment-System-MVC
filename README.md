@@ -40,4 +40,4 @@
 
 | Password Reset - New Password | |
 | --- | --- |
-| ![PR3](https://github.com/user-attachments/assets/7e0bace8-8c65-4ecf-9769-db57fe0eb6ee) |
+| ![PR3](https://github.com/user-attachments/assets/7e0bace8-8c65-4ecf-9769-db57fe0eb6ee) | |
