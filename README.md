@@ -1,4 +1,4 @@
-<h1 align="center">Hospital Appointment System</h1>
+<h1 align="center" style="border: none">Hospital Appointment System</h1>
 
 <h2>Platform: Web</h2>
 
