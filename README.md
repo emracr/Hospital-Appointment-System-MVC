@@ -4,6 +4,7 @@
 <p>Backend: <b>.Net Core MVC</b></p>
 <p>Architecture: <b>NLayared</b></p>
 <p>ORM: <b>Entity Framework</b></p>
+<p>Database: <b>MSSQL Server</b></p>
 
 <h3 align="left">Languages and Tools:</h3>
 <p align="left" witdh="320" height="320">
