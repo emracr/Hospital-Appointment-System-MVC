@@ -1,5 +1,7 @@
 <h1 align="center">Hospital Appointment System</h1>
 
+<h2>Platform: Web</h2>
+
 | Login | Register |
 | --- | --- |
 | ![Login](https://github.com/user-attachments/assets/a7725abc-0322-484b-9b92-62cb6b5d1222) | ![Register](https://github.com/user-attachments/assets/d61bf2c4-27c7-4f16-b5ed-dc8133c430bd) |
