@@ -1,9 +1,9 @@
 <h1 align="center">Hospital Appointment System</h1>
 
-<h3>Platform: Web</h3>
-<h3>Backend: .Net Core MVC</h3>
-<h3>Architecture: NLayared</h3>
-<h3>ORM: Entity Framework</h3>
+<p>Platform: Web</p>
+<p>Backend: .Net Core MVC</p>
+<p>Architecture: NLayared</p>
+<p>ORM: Entity Framework</p>
 
 <h3 align="left">Languages and Tools:</h3>
 <p align="left" witdh="320" height="320">
